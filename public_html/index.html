@@ -8,19 +8,26 @@ and open the template in the editor.
     <head>
         <title>Viewr</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/text.css" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="js/Location.js"></script>
+        <script src="js/Photo.js"></script>
         <script src="js/Main.js"></script>
     </head>
     <body>
         <div id="top">
-            <h1>Viewr</h1>
+            <h1 class="title">Viewr</h1>
         </div>
         <div id="map"></div>
         <div id="controls">
-            Controls go here!
+            <form>
+                Flickr Username:<br />
+                <input type="text" name="username" /><br />
+                <button id="view">View Photos</button>
+            </form>
         </div>
     </body>
 </html>
