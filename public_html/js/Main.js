@@ -15,6 +15,7 @@ window.Main = (function() {
     function Main() {
         this.map = null;
         this.windows = [];
+        this.flickr = new Flickr("c63086d266809ed8882ac3b73f2eb3e2", "c89876b49c311bb4");
     }
     
     /**
@@ -31,9 +32,32 @@ window.Main = (function() {
             event.preventDefault();
             
             // Make some dummy photos!
-            var photos = [];
-            photos.push(new Photo("Test", "A test photo.", "http://www.allgofree.org/pics/baby_whale.png", new Location(43.083848, -77.6799)));
-            self.populateMap(photos);
+            /*var photos = [];
+            photos.push(new Photo("", "Test", "A test photo.", "http://www.allgofree.org/pics/300px-718smiley.svg.png", new Location(43.083848, -77.6799)));
+            self.populateMap(photos);*/
+            
+            // Grab the name that the user entered.
+            var username = $("#username").val();
+            
+            // Make an array for the final photos
+            var finalPhotos = [];
+            
+            // Grab their photos and filter them
+            self.flickr.getPublicPhotosWithData(username, function(photos) {
+                for (var i = 0; i < photos.length; i++) {
+                    var next = photos[i];
+                    if (next.location !== null) {
+                        finalPhotos.push(next);
+                    }
+                }
+            });
+            
+            if (finalPhotos.length !== 0) {
+                self.populateMap(finalPhotos);
+            }
+            else {
+                
+            }
         });
         
         // Grab the users current location if possible
@@ -109,6 +133,7 @@ window.Main = (function() {
     return Main;
 })();
 
+// Setup our initialization function
 $(function(){
     var instance = new Main();
     instance.init();

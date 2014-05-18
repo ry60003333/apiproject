@@ -11,7 +11,7 @@ window.Location = (function() {
      * Creates a new Location.
      * @param {Number} latitude The latitude value.
      * @param {Number} longitude The longitude value.
-     * @returns {Location} The new location object
+     * @returns {Location} The new Location object.
      */
     function Location(latitude, longitude) {
         this.latitude = latitude;
