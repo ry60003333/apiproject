@@ -8,10 +8,12 @@ and open the template in the editor.
     Author     : ry60003333
 */
 
+/* Styling for the body */
 body {
     background-color: #C2F5FF;
 }
 
+/* Styling for the header */
 header {
     width: 700px;
     margin-left: auto;
@@ -24,10 +26,12 @@ header {
     border-radius: 6px;
 }
 
+/* Styling for lists */
 ul {
     text-align: left;
 }
 
+/* Styling for the section */
 section {
     width: 700px;
     margin-left: auto;
@@ -38,4 +42,18 @@ section {
     border-radius: 6px;
     padding: 10px;
     margin-bottom: 5px;
+}
+
+/* Lets change those link colors, no one likes purple links! */
+a:link {
+    color: #4EA2F5;
+}
+a:visited {
+    color: #4EA2F5;
+}
+a:hover {
+    color: #4E83F5;
+}
+a:active {
+    color: #4EA2F5;
 }

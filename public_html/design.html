@@ -30,15 +30,43 @@ and open the template in the editor.
         <section>
             <h2>List of Features</h2>
             <ul>
-                <li>Will allow users to choose a Flickr user and place all of their photos onto a Google Maps view.</li>
+                <li>Allows users to choose a Flickr user and place all of their photos onto a Google Maps view.</li>
                 <li>There will be a sidebar that lists all the major locations where photos where taken.</li>
                 <li>Support for showing where entire albums of photos were taken.</li>
                 <li>Show the date/time a photo was taken as metadata below the photo on the map.</li>
             </ul>
         </section>
+		<section>
+            <h2>Architecture</h2>
+            <ul>
+                <li>Four classes - Main, Flickr, Photo, and Location.</li>
+                <li>Main: The main class of the program, uses other classes to fulfill specific functions.</li>
+				<li>Flickr: Takes photos from the Flickr profile given.</li>
+				<li>Photo: Represents individual photos.</li>
+				<li>Location: Represents the location of individual photos.</li>
+            </ul>
+        </section>
+		<section>
+            <h2>Decision-Making</h2>
+            <ul>
+                <li>Design: Made app have white and silvery color scheme, bold and 3D-like title text. Simple, uncomplicated design.</li>
+                <li>Uses the Google Web Fonts API to load in and use the Open Sans font.</li>
+                <li>Technical: Limited photos to being from only one user, as Flickr API works better that way.</li>
+            </ul>
+        </section>
+		<section>
+            <h2>Extras</h2>
+            <ul>
+                <li>Displays multiple photos on same Google Map, using their geo-cache data from Flickr to determine their position.</li>
+            </ul>
+        </section>
         <section>
-            <h2>Mockup</h2>
+            <h2>Mock-Up</h2>
             <img src="images/mockup.png" alt="" />
+        </section>
+		<section>
+            <h2>Link</h2>
+            <a href="index.html"> Link to Viewer Prototype </a>
         </section>
     </body>
 </html>

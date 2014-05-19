@@ -27,6 +27,10 @@ window.Main = (function() {
         // Get a reference back to ourself
         var self = this;
         
+        // Hide out stuff!
+        $("#loading").hide();
+        $("#error").hide();
+        
         // Add a listener for the view button
         $("#view").on("click", function(event) {
             event.preventDefault();
@@ -35,6 +39,10 @@ window.Main = (function() {
             /*var photos = [];
             photos.push(new Photo("", "Test", "A test photo.", "http://www.allgofree.org/pics/300px-718smiley.svg.png", new Location(43.083848, -77.6799)));
             self.populateMap(photos);*/
+            
+            // Say that we are loading!
+            $("#loading").show();
+            $("#error").hide();
             
             // Grab the name that the user entered.
             var username = $("#username").val();
@@ -50,14 +58,18 @@ window.Main = (function() {
                         finalPhotos.push(next);
                     }
                 }
+                
+                if (finalPhotos.length !== 0) {
+                    self.populateMap(finalPhotos);
+                }
+                else {
+                    $("#error").show();
+                }
+                
+                $("#loading").hide();
             });
             
-            if (finalPhotos.length !== 0) {
-                self.populateMap(finalPhotos);
-            }
-            else {
-                
-            }
+            
         });
         
         // Grab the users current location if possible
@@ -124,7 +136,6 @@ window.Main = (function() {
             });
             
             self.windows.push(window);
-            
             self.map.panTo(next.location.getGooglePosition());
         });
         

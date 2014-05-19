@@ -19,6 +19,11 @@ window.Flickr = (function() {
         this.secret = secret;
     }
     
+    /**
+     * Print debug text.
+     * @param {String} text The text to print.
+     * @returns {undefined}
+     */
     Flickr.prototype.debug = function(text) {
         
     };
@@ -185,7 +190,7 @@ window.Flickr = (function() {
                 var id = photos[i].id;
                 self.getPhotoData(id, function(photoObject) {
                     photoObjects.push(photoObject);
-                    console.log("Adding photo " + photoObject.id);
+                    self.debug("Adding photo " + photoObject.id);
                     if (photoObjects.length === photos.length) {
                         callback(photoObjects);
                     }
